@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IRokoTvMovies</string>
+
+    <string name="API_KEY">7db7584347945c97b6f964daf6b5f77e</string>
+    <string name="top_rated">TOP RATED</string>
+    <string name="popular">POPULAR</string>
+    <string name="watch_trailer">WATCH TRAILER</string>
+    <string name="title">Title</string>
+    <string name="synopsis">Synopsis</string>
+
+</resources>

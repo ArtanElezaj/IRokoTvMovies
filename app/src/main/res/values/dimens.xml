@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_toprated_padding_top">5dp</dimen>
+    <dimen name="toprated_tv_text_size">25sp</dimen>
+    <dimen name="tr_tv_padd_left">15dp</dimen>
+    <dimen name="tr_tv_padd_bottom">20dp</dimen>
+    <dimen name="line_separator_height">2dp</dimen>
+    <dimen name="custom_bar_padd_top">25dp</dimen>
+    <dimen name="popular_tv_marg_left">15dp</dimen>
+    <dimen name="popular_tv_text_size">25sp</dimen>
+    <dimen name="boom_width">56dp</dimen>
+    <dimen name="holder_mleft">5dp</dimen>
+    <dimen name="holder_mtop">5dp</dimen>
+    <dimen name="mdetails_lay_padd_top">20dp</dimen>
+    <dimen name="mdetails_framelay_height">370dp</dimen>
+    <dimen name="mdetails_img_height">350dp</dimen>
+    <dimen name="arrow_left_width">40dp</dimen>
+    <dimen name="arrow_margin">10dp</dimen>
+    <dimen name="btn_watch_text_size">28sp</dimen>
+    <dimen name="btn_mar_left">40dp</dimen>
+    <dimen name="title_margin">8dp</dimen>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="synopsis_margin">8dp</dimen>
+    <dimen name="mov_details_lay_margin">8dp</dimen>
+    <dimen name="time_icon_width">20dp</dimen>
+    <dimen name="time_mar_right">5dp</dimen>
+    <dimen name="imdb_margin">8dp</dimen>
+
+</resources>

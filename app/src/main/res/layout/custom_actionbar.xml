@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:paddingTop="@dimen/custom_bar_padd_top">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:text="@string/popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="@dimen/popular_tv_marg_left"
+        android:textSize="@dimen/popular_tv_text_size"
+        />
+
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/boom_sort"
+        android:layout_width="@dimen/boom_width"
+        android:layout_height="@dimen/boom_width"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        app:boom_inActionBar="true"
+        />
+
+</RelativeLayout>

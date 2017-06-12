@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="artan.com.irokotvmovies">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/irokotv_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/irokotv_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".services.MoviesService"
+            android:exported="false" />
+
+        <activity android:name=".MovieDetailsScreen"></activity>
+        <activity android:name=".WatchMovieScreen"></activity>
+    </application>
+
+</manifest>
