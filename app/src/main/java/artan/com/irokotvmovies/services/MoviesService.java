@@ -57,21 +57,25 @@ public class MoviesService extends IntentService {
                         LocalBroadcastManager.getInstance(getApplicationContext());
                 manager.sendBroadcast(messageIntent);
             } else if (checkWhichUrl.contains("popular")) {
-                response = response.substring(60, response.length() - 1);
-                Movies[] movies = gson.fromJson(response, Movies[].class);
-                Intent messageIntent = new Intent(AllUrlLinks.M_SERVICE_ARRAY_NAME);
-                messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_POPULAR_DATA, movies);
-                LocalBroadcastManager manager =
-                        LocalBroadcastManager.getInstance(getApplicationContext());
-                manager.sendBroadcast(messageIntent);
+                if(response != null && !response.isEmpty()) {
+                    response = response.substring(60, response.length() - 1);
+                    Movies[] movies = gson.fromJson(response, Movies[].class);
+                    Intent messageIntent = new Intent(AllUrlLinks.M_SERVICE_ARRAY_NAME);
+                    messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_POPULAR_DATA, movies);
+                    LocalBroadcastManager manager =
+                            LocalBroadcastManager.getInstance(getApplicationContext());
+                    manager.sendBroadcast(messageIntent);
+                }
             } else if (checkWhichUrl.contains("top_rated")) {
-                response = response.substring(59, response.length() - 1);
-                Movies[] movies = gson.fromJson(response, Movies[].class);
-                Intent messageIntent = new Intent(AllUrlLinks.M_SERVICE_ARRAY_NAME);
-                messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_TOP_RATED_DATA, movies);
-                LocalBroadcastManager manager =
-                        LocalBroadcastManager.getInstance(getApplicationContext());
-                manager.sendBroadcast(messageIntent);
+                if(response != null && !response.isEmpty()) {
+                    response = response.substring(59, response.length() - 1);
+                    Movies[] movies = gson.fromJson(response, Movies[].class);
+                    Intent messageIntent = new Intent(AllUrlLinks.M_SERVICE_ARRAY_NAME);
+                    messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_TOP_RATED_DATA, movies);
+                    LocalBroadcastManager manager =
+                            LocalBroadcastManager.getInstance(getApplicationContext());
+                    manager.sendBroadcast(messageIntent);
+                }
             } else {
                 MovieDetails movieDetails = gson.fromJson(response, MovieDetails.class);
                 Intent messageIntent = new Intent(AllUrlLinks.M_SERVICE_DETAILS_NAME);
