@@ -6,7 +6,7 @@ package artan.com.irokotvmovies.utils;
 
 public class AllUrlLinks {
 
-    private static final String API_KEY = "Put your API here in this string.";
+    private static final String API_KEY = "7db7584347945c97b6f964daf6b5f77e";
     public static final String JSON_URL_POPULAR = "https://api.themoviedb.org/3/movie/popular?api_key=" + API_KEY;
     public static final String JSON_URL_TOP_RATED = "https://api.themoviedb.org/3/movie/top_rated?api_key=" + API_KEY;
 
@@ -19,7 +19,8 @@ public class AllUrlLinks {
     public static final String BASE_URL_IMAGE = "http://image.tmdb.org/t/p/w500";
 
     public static final String M_SERVICE_ARRAY_NAME = "mServiceArrayName";
-    public static final String M_SERVICE_ARRAY_DATA = "mServiceArrayData";
+    public static final String M_SERVICE_ARRAY_POPULAR_DATA = "mServiceArrayPopularData";
+    public static final String M_SERVICE_ARRAY_TOP_RATED_DATA = "mServiceArrayTopRatedData";
     public static final String M_SERVICE_DETAILS_NAME = "mServiceDetailsName";
     public static final String M_SERVICE_DETAILS_DATA = "mServiceDetailsData";
     public static final String M_SERVICE_VIDEO_NAME = "mServiceDetailsData";

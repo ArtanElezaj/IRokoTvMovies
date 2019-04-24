@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity  implements
     private RecyclerView popularRv, topRatedRv;
     private MoviesAdapter popularAdapater;
     private MoviesAdapter topRatedAdapter;
-    List<Movies> moviesList;
-    List<Movies> popularListSaved;
+    List<Movies> moviesPopularList;
+    List<Movies> moviesTopRatedList;
 
     private BoomMenuButton boomSort;
     private boolean isInit = false;
@@ -114,15 +114,24 @@ public class MainActivity extends AppCompatActivity  implements
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            Movies[] movies = (Movies[]) intent.getParcelableArrayExtra(AllUrlLinks.M_SERVICE_ARRAY_DATA);
-            moviesList = Arrays.asList(movies);
-
-            if (moviesList.get(0).getVote_average() <= 8 && moviesList != null) {
-                popularAdapater.setData(moviesList);
-                popularListSaved = moviesList;
-            } else {
-                topRatedAdapter.setData(moviesList);
+            Movies[] moviesPopular = (Movies[]) intent.getParcelableArrayExtra(AllUrlLinks.M_SERVICE_ARRAY_POPULAR_DATA);
+            if(moviesPopular != null) {
+                moviesPopularList = Arrays.asList(moviesPopular);
+                popularAdapater.setData(moviesPopularList);
             }
+
+            Movies[] moviesTopRated = (Movies[]) intent.getParcelableArrayExtra(AllUrlLinks.M_SERVICE_ARRAY_TOP_RATED_DATA);
+            if(moviesTopRated != null) {
+                moviesTopRatedList = Arrays.asList(moviesTopRated);
+                topRatedAdapter.setData(moviesTopRatedList);
+            }
+
+//            if (moviesPopularList.get(0).getVote_average() <= 8 && moviesPopularList != null) {
+//                popularAdapater.setData(moviesPopularList);
+//                moviesTopRatedList = moviesPopularList;
+//            } else {
+//                topRatedAdapter.setData(moviesPopularList);
+//            }
         }
     };
 
@@ -187,13 +196,13 @@ public class MainActivity extends AppCompatActivity  implements
                     public void onClick(int buttonIndex) {
 
                         if (buttonIndex == 0) {
-                            Collections.sort(moviesList, new Comparator<Movies>() {
+                            Collections.sort(moviesPopularList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element1.getVote_count() - element2.getVote_count();
                                 }
                             });
-                            Collections.sort(popularListSaved, new Comparator<Movies>() {
+                            Collections.sort(moviesTopRatedList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element1.getVote_count() - element2.getVote_count();
@@ -201,13 +210,13 @@ public class MainActivity extends AppCompatActivity  implements
                             });
 
                         } else if (buttonIndex == 1) {
-                            Collections.sort(moviesList, new Comparator<Movies>() {
+                            Collections.sort(moviesPopularList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element2.getVote_count() - element1.getVote_count();
                                 }
                             });
-                            Collections.sort(popularListSaved, new Comparator<Movies>() {
+                            Collections.sort(moviesTopRatedList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element2.getVote_count() - element1.getVote_count();
@@ -215,13 +224,13 @@ public class MainActivity extends AppCompatActivity  implements
                             });
 
                         } else if (buttonIndex == 2) {
-                            Collections.sort(moviesList, new Comparator<Movies>() {
+                            Collections.sort(moviesPopularList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element1.getTitle().compareTo(element2.getTitle());
                                 }
                             });
-                            Collections.sort(popularListSaved, new Comparator<Movies>() {
+                            Collections.sort(moviesTopRatedList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element1.getTitle().compareTo(element2.getTitle());
@@ -229,13 +238,13 @@ public class MainActivity extends AppCompatActivity  implements
                             });
 
                         } else if (buttonIndex == 3) {
-                            Collections.sort(moviesList, new Comparator<Movies>() {
+                            Collections.sort(moviesPopularList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element2.getTitle().compareTo(element1.getTitle());
                                 }
                             });
-                            Collections.sort(popularListSaved, new Comparator<Movies>() {
+                            Collections.sort(moviesTopRatedList, new Comparator<Movies>() {
                                 @Override
                                 public int compare(Movies element1, Movies element2) {
                                     return element2.getTitle().compareTo(element1.getTitle());

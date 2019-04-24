@@ -11,7 +11,6 @@ public class Movies implements Parcelable {
 
     private String id;
     private String poster_path;
-    private double vote_average;
     private String title;
     private int vote_count;
 
@@ -21,10 +20,6 @@ public class Movies implements Parcelable {
 
     public String getPoster_path() {
         return poster_path;
-    }
-
-    public double getVote_average() {
-        return vote_average;
     }
 
     public String getTitle() {
@@ -44,7 +39,6 @@ public class Movies implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
         dest.writeString(this.poster_path);
-        dest.writeDouble(this.vote_average);
         dest.writeString(this.title);
         dest.writeInt(this.vote_count);
     }
@@ -55,7 +49,6 @@ public class Movies implements Parcelable {
     protected Movies(Parcel in) {
         this.id = in.readString();
         this.poster_path = in.readString();
-        this.vote_average = in.readDouble();
         this.title = in.readString();
         this.vote_count = in.readInt();
     }

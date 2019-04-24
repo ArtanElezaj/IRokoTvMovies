@@ -60,7 +60,7 @@ public class MoviesService extends IntentService {
                 response = response.substring(60, response.length() - 1);
                 Movies[] movies = gson.fromJson(response, Movies[].class);
                 Intent messageIntent = new Intent(AllUrlLinks.M_SERVICE_ARRAY_NAME);
-                messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_DATA, movies);
+                messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_POPULAR_DATA, movies);
                 LocalBroadcastManager manager =
                         LocalBroadcastManager.getInstance(getApplicationContext());
                 manager.sendBroadcast(messageIntent);
@@ -68,7 +68,7 @@ public class MoviesService extends IntentService {
                 response = response.substring(59, response.length() - 1);
                 Movies[] movies = gson.fromJson(response, Movies[].class);
                 Intent messageIntent = new Intent(AllUrlLinks.M_SERVICE_ARRAY_NAME);
-                messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_DATA, movies);
+                messageIntent.putExtra(AllUrlLinks.M_SERVICE_ARRAY_TOP_RATED_DATA, movies);
                 LocalBroadcastManager manager =
                         LocalBroadcastManager.getInstance(getApplicationContext());
                 manager.sendBroadcast(messageIntent);
