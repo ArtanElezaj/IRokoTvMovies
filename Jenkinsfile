@@ -1,3 +1,3 @@
 node {
-   build 'Pipeline Test'
+   echo 'Hello World'
 }
